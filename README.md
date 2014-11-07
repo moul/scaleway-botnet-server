@@ -10,6 +10,13 @@ Related projects
 - [Shell](https://github.com/moul/ocs-botnet)
 - Server (this project)
 
+Install
+-------
+
+```bash
+git clone https://github.com/moul/ocs-botnet-server server && cd server && make
+```
+
 LICENSE
 -------
 
