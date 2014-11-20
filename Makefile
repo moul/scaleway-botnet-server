@@ -1,7 +1,7 @@
 BROKER_HOST ?= 127.0.0.1
 BROKER_AUTH ?= guest:guest
 
-run: run_rabbit run_redis run_flower
+run: run_rabbit run_redis run_flower run_registry
 
 run_flower:
 	docker run \
@@ -25,6 +25,15 @@ run_rabbit: /data/
 	    -v /data/rabbitmq/mnesia:/data/mnesia \
 	    -d \
 	    armbuild/dockerfile-rabbitmq
+
+run_registry: /data/
+	docker run \
+	    -p 5000:5000 \
+	    -v /data/registry:/registry \
+	    -e SETTINGS_FLAVOR=local \
+	    -e STORAGE_PATH=/registry \
+	    -d \
+	    armbuild/registry
 
 /data/:
 	mkdir -p /data/rabbitmq/
