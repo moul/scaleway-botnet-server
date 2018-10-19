@@ -1,6 +1,8 @@
 OCS Botnet Server
 =================
 
+[![GuardRails badge](https://badges.production.guardrails.io/moul/scaleway-botnet-server.svg)](https://www.guardrails.io)
+
 All components required for the botnet to run
 
 Related projects
